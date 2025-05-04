@@ -1,0 +1,19 @@
+body{
+    // font-family: 'open-sans', sans-serif;
+    font-family: "Vidaloka" serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+// Reset Bootstrap navbar styles
+.navbar:not(.bootstrap-scope .navbar) {
+  position: initial;
+  padding: initial;
+  z-index: initial;
+  background-color: initial;
+  flex-wrap: initial;
+  
+  .navbar-nav, .navbar-collapse {
+    flex-direction: initial;
+  }
+}

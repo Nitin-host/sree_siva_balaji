@@ -45,7 +45,16 @@ export default function Home() {
         >
           <Row>
             <Col xs="12" md="6">
-              <h1>Welcome to Our Website</h1>
+              <div className="headline-wrapper text-start">
+                <h3 className="bt_bb_headline_tag">
+                  <span className="bt_bb_headline_superheadline">
+                    PHILOSOPHY
+                  </span>
+                  <span className="bt_bb_headline_content">
+                    <span>Welcome to Our Website</span>
+                  </span>
+                </h3>
+              </div>
               <p>
                 This is compelling content that appears over the background
                 image

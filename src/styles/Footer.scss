@@ -1,0 +1,160 @@
+// Footer SCSS
+.footer-container {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: black;
+  padding: 3rem 2rem;
+//   margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+
+  // Decorative elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, rgba(212,175,55,0) 70%);
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,59,13,0.3) 0%, rgba(13,59,13,0) 70%);
+    z-index: 0;
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    flex: 1 1 300px;
+    margin-bottom: 2rem;
+
+    &.quick-links {
+      flex: 1 1 200px;
+    }
+  }
+
+  .footer-heading {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+
+    &-small {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  .footer-text {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+
+    .social-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #d4af37;
+      }
+    }
+  }
+
+  .quick-links-list {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+
+    a {
+      color: black;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #d4af37;
+      }
+    }
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .contact-icon {
+      margin-right: 0.5rem;
+      color: #d4af37;
+    }
+  }
+
+  .newsletter-form {
+    display: flex;
+
+    input {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #d4af37;
+      color: #1a1a1a;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #c9a227;
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+
+    p {
+      margin: 0;
+
+      &.tagline {
+        margin: 0.5rem 0 0;
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+    }
+  }
+}

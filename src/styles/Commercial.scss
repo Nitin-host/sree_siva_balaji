@@ -1,0 +1,12 @@
+.commercial-container{
+    .image-container{
+            margin: 0 auto;
+            display: block;
+            img{
+                width:100% !important;
+                height: calc(100vh - 0.3rem) !important;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+        }
+}

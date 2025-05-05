@@ -17,3 +17,8 @@ body{
     flex-direction: initial;
   }
 }
+
+.golden-line {
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}

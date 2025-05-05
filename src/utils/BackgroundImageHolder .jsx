@@ -17,16 +17,24 @@ const BackgroundImageHolder = ({
     if (!element) return;
 
     const handleScroll = () => {
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        // Disable transform for small screens
+        element.style.transform = "translate3d(0, 0, 0)";
+        if (contentRef.current) {
+          contentRef.current.style.transform = "translate3d(0, 0, 0)";
+        }
+        return;
+      }
+
       const rect = element.getBoundingClientRect();
       const scrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
       const elementPosition = rect.top + scrollPosition;
       const offset = (scrollPosition - elementPosition) * parallaxSpeed;
 
-      // Apply parallax only to background
       element.style.transform = `translate3d(0, ${offset}px, 0)`;
 
-      // Keep content stationary or apply different effect
       if (contentRef.current) {
         contentRef.current.style.transform = `translate3d(0, ${
           -offset * 0.3
@@ -36,7 +44,12 @@ const BackgroundImageHolder = ({
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll); // Recalculate on resize
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [parallaxSpeed]);
 
   return (
@@ -47,13 +60,11 @@ const BackgroundImageHolder = ({
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
 
-      {/* Overlay div */}
       <div
         className="background-overlay"
         style={{ backgroundColor: overlayColor }}
       />
 
-      {/* Content container */}
       <div
         ref={contentRef}
         className={`background-content content-${contentPosition}`}

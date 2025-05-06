@@ -7,7 +7,7 @@
 
 .covered-image {
   object-fit: cover;
-  height: 550px;
+  height: calc(100vh - 0.3rem) !important;
   width: 100%;
 }
 

@@ -1,7 +1,7 @@
-// src/components/ImageGallery.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../styles/ImageGallery.module.css";
+import ImageGalleryUtil from "./ImageGalleryUtil";
+import styles from "../styles/ImageGallery.module.scss";
 
 export default function ImageGallery({ data }) {
   const navigate = useNavigate();
@@ -11,40 +11,31 @@ export default function ImageGallery({ data }) {
   }
 
   return (
-    <div className={styles["image-container"]}>
+    <div className={styles["list-layout"]}>
       {Object.entries(data).map(([category, projects]) =>
         projects.length > 0 ? (
-          <div key={category || "uncategorized"}>
-            {category ? (
+          <div key={category}>
+            {category && (
               <h2 className={styles["section-title"]}>{category}</h2>
-            ) : (
-              ""
             )}
-            <div className={styles["project-grid"]}>
-              {projects.map((project, index) => (
-                <div
-                  key={index}
-                  className={styles["project-card"]}
-                  onClick={() => project.link && navigate(project.link)}
-                  style={{ cursor: project.link ? "pointer" : "default" }}
-                >
-                  <div
-                    className={styles["project-image"]}
-                    style={{ backgroundImage: `url(${project.image})` }}
-                  >
-                    <div className={styles["project-overlay"]}>
-                      <h2>{project.title}</h2>
-                      <p>{project.subtitle}</p>
-                      {project.link && (
-                        <span className={styles["read-more"]}>
-                          Read More....
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+
+            {projects.map((project, index) => (
+              <ImageGalleryUtil
+                key={index}
+                data={{
+                  imageSrc: project.image,
+                  altText: project.title,
+                  title: project.title,
+                  subtitle: project.subtitle,
+                  description: project.description || "",
+                  buttonText: project.link ? "View Project" : "",
+                  onButtonClick: project.link
+                    ? () => navigate(project.link)
+                    : undefined,
+                  position: index % 2 === 0 ? "left" : "right",
+                }}
+              />
+            ))}
           </div>
         ) : null
       )}

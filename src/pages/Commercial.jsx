@@ -1,42 +1,40 @@
 import React from "react";
-import "../styles/Commercial.scss";
 import ImageGallery from "../utils/ImageGallery";
+import "../styles/Commercial.scss";
 
 export default function Commercial() {
    const commercialData = {
-     COMMERCIAL: [
+     '': [
        {
          title: "INDUSTRIAL DESIGN",
          subtitle: "EXPOSED TEXTURES",
-        //  image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", // industrial-style room
-        image: '/images/commercial.jpg',
-        //  link: "/residential",
+         image: '/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg',
+         link: "/residential",
        },
        {
          title: "BACK TO HISTORY",
          subtitle: "SITTING LOUNGE",
-         image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c", // vintage lounge
+          image: "/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg",
+          link: "/residential",
        },
        {
          title: "MODERN WAVES",
          subtitle: "LUXURY TOUCH",
-         image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be", // modern interior
+          image: "/images/TECH MAHINDRA-CHENNAI/TC (6).jpeg",
+          link: "/residential",
        },
        {
          title: "CAFE",
          subtitle: "TOUCH OF COLOURS",
-         image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", // colorful cafe
+          image: "/images/TECH MAHINDRA-CHENNAI/TC (5).jpeg",
+          link: "/residential",
        },
        {
          title: "GYM",
          subtitle: "LIFT UP",
-         image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e", // gym
-       },
-       {
-         title: "PEB STRUCTURE",
-         subtitle: "ACP CLADDINGS",
-         image: "https://images.unsplash.com/photo-1581092335084-1cbcb9b1d1c5",
-       },
+          image: "/images/TECH MAHINDRA-CHENNAI/TC (4).jpeg",
+          link: "/residential",
+       }
      ],
    };
     return (
@@ -57,7 +55,7 @@ export default function Commercial() {
             our offerings and discover how we can help you achieve your goals.
           </p>
         </div>
-        <div className="image-gallery p-2">
+        <div className="image-gallery">
           <ImageGallery data={commercialData} />
         </div>
       </section>

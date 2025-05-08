@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Card as ReactstrapCard, CardBody } from "reactstrap";
 import "../styles/Card.scss";
 
 const Card = ({
@@ -15,7 +16,7 @@ const Card = ({
   return (
     <div className="bt_bb_column_content">
       <div className="bt_bb_column_content_inner">
-        <div className={`bt_bb_card_image ${theme} ${border}`}>
+        <ReactstrapCard className={`bt_bb_card_image ${theme} ${border}`}>
           <div className="bt_bb_card_image_background">
             <Link to={link} target="_self" title={title}>
               <div className="bt_bb_image">
@@ -23,7 +24,7 @@ const Card = ({
               </div>
             </Link>
           </div>
-          <div className="bt_bb_card_image_text_box">
+          <CardBody className="bt_bb_card_image_text_box">
             <div className="bt_bb_card_image_title">
               <header className="bt_bb_headline bt_bb_dash_none bt_bb_size_medium">
                 <h3 className="bt_bb_headline_tag">
@@ -39,8 +40,9 @@ const Card = ({
             {showContent && (
               <div className="bt_bb_card_image_content_inner">{content}</div>
             )}
-          </div>
-        </div>
+          </CardBody>
+        </ReactstrapCard>
+
         {separator && (
           <div className="bt_bb_separator_v2 bt_bb_border_style_none bt_bb_icon_size_normal bt_bb_text_size_normal bt_bb_separator_v2_without_content bt_bb_top_spacing_ bt_bb_bottom_spacing_medium">
             <div className="bt_bb_separator_v2_inner">

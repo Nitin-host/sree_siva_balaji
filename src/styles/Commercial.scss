@@ -1,12 +1,132 @@
-.commercial-container{
+$image-radius: 12px;
+$shadow-color: rgba(0, 0, 0, 0.3);
+$gradient-colors: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
+
+.commercial-container {
+  .commercial-content {
+    padding: 2rem;
+    border-radius: 12px;
+    background: linear-gradient(270deg, #e6f2ff, #ffffff, #f0f8ff);
+    background-size: 600% 600%;
+    animation: animatedBackground 20s ease infinite;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+  }
+
+  @keyframes animatedBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .image-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        height: calc(100vh - 0.3rem) !important;
+        width: 100%;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 90%;
+      left: 100%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+
+      h1 {
+        font-size: 5rem;
+        background: linear-gradient(to left, #0dff82, #09ff22);
+        -webkit-text-fill-color: transparent;
+        
+        -webkit-background-clip: text;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        animation: slideToCenter 2s ease-out forwards;
+        white-space: nowrap;
+        text-align: center;
+      }
+    }
+  }
+
+  @keyframes slideToCenter {
+    0% {
+      opacity: 0;
+      transform: translate(-150%, -50%);
+    }
+    60% {
+      opacity: 1;
+      transform: translate(-55%, -50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .commercial-content {
+      padding: 2rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
     .image-container{
-            margin: 0 auto;
-            display: block;
-            img{
-                width:100% !important;
-                height: calc(100vh - 0.3rem) !important;
-                object-fit: cover;
-                border-radius: 5px;
+         .text-overlay {
+            top: 90%;
+            left: 100%;
+            h1 {
+                font-size: 3rem !important;
             }
         }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .commercial-content {
+      padding: 0.3rem;
+    }
+
+    .image-container {
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: calc(100vh - 0.3rem);
+      }
+
+      .text-overlay h1 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+      }
+    }
+  }
 }

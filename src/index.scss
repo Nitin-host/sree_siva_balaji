@@ -1,9 +1,19 @@
 body{
     // font-family: 'open-sans', sans-serif;
-    font-family: "Vidaloka" serif;
+    font-family: 'Vidaloka' !important;
     background-color: #f0f0f0;
     color: #333;
 }
+
+
+body.modal-open {
+  overflow: hidden !important;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  touch-action: none;
+}
+
 
 // Reset Bootstrap navbar styles
 .navbar:not(.bootstrap-scope .navbar) {

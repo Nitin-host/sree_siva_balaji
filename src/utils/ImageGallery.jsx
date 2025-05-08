@@ -1,11 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import ImageGalleryUtil from "./ImageGalleryUtil";
 import styles from "../styles/ImageGallery.module.scss";
 
-export default function ImageGallery({ data }) {
-  const navigate = useNavigate();
-
+export default function ImageGallery({ data, navigate }) {
   if (!data || Object.keys(data).length === 0) {
     return <p>No categories available.</p>;
   }
@@ -18,7 +15,6 @@ export default function ImageGallery({ data }) {
             {category && (
               <h2 className={styles["section-title"]}>{category}</h2>
             )}
-
             {projects.map((project, index) => (
               <ImageGalleryUtil
                 key={index}
@@ -28,10 +24,20 @@ export default function ImageGallery({ data }) {
                   title: project.title,
                   subtitle: project.subtitle,
                   description: project.description || "",
-                  buttonText: project.link ? "View Project" : "",
-                  onButtonClick: project.link
-                    ? () => navigate(project.link)
-                    : undefined,
+                  buttonText: "View Project",
+                  onButtonClick: () =>
+                    navigate(
+                      `/project-details/${encodeURIComponent(project.title)}`,
+                      {
+                        state: {
+                          title: project.title,
+                          subtitle: project.subtitle,
+                          description: project.description,
+                          projectDetails: project.projectDetails,
+                          gallery: project.gallery,
+                        },
+                      }
+                    ),
                   position: index % 2 === 0 ? "left" : "right",
                 }}
               />

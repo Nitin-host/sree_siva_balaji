@@ -68,7 +68,11 @@ export default function Header() {
           <Link
             to="/"
             className={`header__link ${isActive("/") ? "active" : ""}`}
-            onClick={closeMenus}
+            onClick={(e) => {
+              e.preventDefault(); 
+              closeMenus();
+              window.location.href = "/";
+            }}
           >
             Home
           </Link>
@@ -94,7 +98,11 @@ export default function Header() {
                   <Link
                     to="/commercial"
                     className="header__dropdown-link"
-                    onClick={closeMenus}
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      closeMenus();
+                      window.location.href = "/commercial";
+                    }}
                   >
                     Commercial
                   </Link>
@@ -103,7 +111,11 @@ export default function Header() {
                   <Link
                     to="/residential"
                     className="header__dropdown-link"
-                    onClick={closeMenus}
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      closeMenus();
+                      window.location.href = "/residential";
+                    }}
                   >
                     Residential
                   </Link>
@@ -115,14 +127,22 @@ export default function Header() {
           <Link
             to="/about"
             className={`header__link ${isActive("/about") ? "active" : ""}`}
-            onClick={closeMenus}
+            onClick={(e) => {
+              e.preventDefault(); 
+              closeMenus();
+              window.location.href = "/about";
+            }}
           >
             About
           </Link>
           <Link
             to="/contact"
             className={`header__link ${isActive("/contact") ? "active" : ""}`}
-            onClick={closeMenus}
+            onClick={(e) => {
+              e.preventDefault();
+              closeMenus();
+              window.location.href = "/contact";
+            }}
           >
             Contact
           </Link>

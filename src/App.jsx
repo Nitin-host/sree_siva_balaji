@@ -7,6 +7,7 @@ import Commerical from "./pages/Commercial";
 import Residential from "./pages/Residential";
 import Header from "./component/Header";
 import UniqueFooter from "./component/Footer";
+import ProjectDetails from "./component/ProjectDetails";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/commercial" element={<Commerical />} />
         <Route path="/residential" element={<Residential />} />
+        <Route path="/project-details/:title" element={<ProjectDetails />} />
       </Routes>
-      <UniqueFooter/>
+      <UniqueFooter />
     </>
   );
 }

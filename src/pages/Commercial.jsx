@@ -1,63 +1,77 @@
 import React from "react";
 import ImageGallery from "../utils/ImageGallery";
+import { useNavigate } from "react-router-dom";
 import "../styles/Commercial.scss";
 
 export default function Commercial() {
-   const commercialData = {
-     '': [
-       {
-         title: "INDUSTRIAL DESIGN",
-         subtitle: "EXPOSED TEXTURES",
-         image: '/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg',
-         link: "/residential",
-       },
-       {
-         title: "BACK TO HISTORY",
-         subtitle: "SITTING LOUNGE",
-          image: "/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg",
-          link: "/residential",
-       },
-       {
-         title: "MODERN WAVES",
-         subtitle: "LUXURY TOUCH",
-          image: "/images/TECH MAHINDRA-CHENNAI/TC (6).jpeg",
-          link: "/residential",
-       },
-       {
-         title: "CAFE",
-         subtitle: "TOUCH OF COLOURS",
-          image: "/images/TECH MAHINDRA-CHENNAI/TC (5).jpeg",
-          link: "/residential",
-       },
-       {
-         title: "GYM",
-         subtitle: "LIFT UP",
-          image: "/images/TECH MAHINDRA-CHENNAI/TC (4).jpeg",
-          link: "/residential",
-       }
-     ],
-   };
-    return (
-      <section className="commercial-container">
-        <div className="image-container">
-          <img
-            src="/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg"
-            alt="Nature Background"
-          />
-        </div>
+  const navigate = useNavigate();
 
-        <div className="golden-line"></div>
-        <div className="commercial-content">
-          <h1>Commercial</h1>
-          <p>
-            Welcome to our commercial section! Here, we showcase our latest
-            products and services designed to meet your business needs. Explore
-            our offerings and discover how we can help you achieve your goals.
-          </p>
+  const commercialData = {
+    "": [
+      {
+      title: "INDUSTRIAL DESIGN",
+      subtitle: "EXPOSED TEXTURES",
+      image: "/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg",
+      description: "An industrial style blending textures.",
+      projectDetails: {
+        type: "Commercial",
+        areaRange: "68947 sft to 72266 sft",
+        landExtent: {
+                    "value": "7.95 Acres",
+                    "icon": "FaMapMarkedAlt"
+              },
+        leasableArea: "2.8 Million sft",
+        environmentalDeck: "1.7 Lakh sft",
+        verticalHeight: "4 Cellars + G + 21 Floors",
+        powerSupport: "100% DG Back-Up",
+        elevators: "4 High Speed Service Lifts + 40 Lifts",
+        image: "/images/TECH MAHINDRA-CHENNAI/TC (10).jpeg",
+      },
+      gallery: [
+        "/images/TECH MAHINDRA-CHENNAI/TC (3).jpeg",
+        "/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg",
+        "/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg",
+        "/images/TECH MAHINDRA-CHENNAI/TC (6).jpeg",
+        "/images/TECH MAHINDRA-CHENNAI/TC (5).jpeg"
+      ]
+    },
+
+      {
+        title: "BACK TO HISTORY",
+        subtitle: "SITTING LOUNGE",
+        image: "/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg",
+        description: "Cozy historical design elements.",
+        gallery: [
+          "/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg",
+          "/images/TECH MAHINDRA-CHENNAI/TC (6).jpeg",
+        ],
+      },
+      // Add more projects similarly...
+    ],
+  };
+
+  return (
+    <section className="commercial-container">
+      <div className="image-container">
+        <img
+          src="/images/TECH MAHINDRA-CHENNAI/TC (8).jpeg"
+          alt="Nature Background"
+        />
+        <div className="text-overlay">
+          <h1>COMMERCIAL</h1>
         </div>
+      </div>
+
+      <div className="golden-line"></div>
+      <div className="commercial-content">
+        <p>
+          Welcome to our commercial section! Here, we showcase our latest
+          products and services.
+        </p>
         <div className="image-gallery">
-          <ImageGallery data={commercialData} />
+          <ImageGallery data={commercialData} navigate={navigate} />
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

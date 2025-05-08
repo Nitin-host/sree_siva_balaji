@@ -29,16 +29,33 @@ const UniqueFooter = () => {
             <h4 className="footer-heading footer-heading-small">Quick Links</h4>
             <ul className="quick-links-list">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() => (window.location.href = "/")}>
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/commercial">Commercial</Link>
+                <Link
+                  to="/commercial"
+                  onClick={() => (window.location.href = "/commercial")}
+                >
+                  Commercial
+                </Link>
               </li>
               <li>
-                <Link to="/residential">Residential</Link>
+                <Link
+                  to="/residential"
+                  onClick={() => (window.location.href = "/residential")}
+                >
+                  Residential
+                </Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link
+                  to="/about"
+                  onClick={() => (window.location.href = "/about")}
+                >
+                  About Us
+                </Link>
               </li>
             </ul>
           </div>

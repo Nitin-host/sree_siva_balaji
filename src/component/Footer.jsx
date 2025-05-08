@@ -1,10 +1,12 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import "../styles/Footer.scss"; // Import the SCSS file
-import { Link } from "react-router-dom";
+import "../styles/Footer.scss";
+import { useNavigate } from "react-router-dom";
 
 const UniqueFooter = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -29,33 +31,33 @@ const UniqueFooter = () => {
             <h4 className="footer-heading footer-heading-small">Quick Links</h4>
             <ul className="quick-links-list">
               <li>
-                <Link to="/" onClick={() => (window.location.href = "/")}>
+                <span onClick={() => navigate("/")} className="footer-link">
                   Home
-                </Link>
+                </span>
               </li>
               <li>
-                <Link
-                  to="/commercial"
-                  onClick={() => (window.location.href = "/commercial")}
+                <span
+                  onClick={() => navigate("/commercial")}
+                  className="footer-link"
                 >
                   Commercial
-                </Link>
+                </span>
               </li>
               <li>
-                <Link
-                  to="/residential"
-                  onClick={() => (window.location.href = "/residential")}
+                <span
+                  onClick={() => navigate("/residential")}
+                  className="footer-link"
                 >
                   Residential
-                </Link>
+                </span>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  onClick={() => (window.location.href = "/about")}
+                <span
+                  onClick={() => navigate("/about")}
+                  className="footer-link"
                 >
                   About Us
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -67,20 +69,7 @@ const UniqueFooter = () => {
               <MdEmail className="contact-icon" />
               <span>contact@sreesivabalaji.com</span>
             </div>
-            <p></p>
           </div>
-
-          {/* Newsletter */}
-          {/* <div className="footer-section">
-            <h4 className="footer-heading footer-heading-small">Newsletter</h4>
-            <p className="footer-text">
-              Subscribe to our newsletter for exclusive offers and updates.
-            </p>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Your email" />
-              <button>Subscribe</button>
-            </div>
-          </div> */}
         </div>
 
         {/* Copyright */}

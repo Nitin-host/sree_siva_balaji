@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import "../styles/Header.scss";
 
@@ -8,6 +8,7 @@ export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +39,7 @@ export default function Header() {
   return (
     <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
       <div className="header__container">
-        <Link to="/" className="header__logo">
+        <Link to="/" className="header__logo" onClick={() => navigate("/")}>
           YourLogo
         </Link>
 
@@ -65,17 +66,15 @@ export default function Header() {
             </button>
           )}
 
-          <Link
-            to="/"
+          <div
             className={`header__link ${isActive("/") ? "active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault(); 
+            onClick={() => {
               closeMenus();
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             Home
-          </Link>
+          </div>
 
           <div
             className="header__dropdown"
@@ -95,57 +94,50 @@ export default function Header() {
             {isDropdownOpen && (
               <ul className="header__dropdown-menu">
                 <li>
-                  <Link
-                    to="/commercial"
+                  <div
                     className="header__dropdown-link"
-                    onClick={(e) => {
-                      e.preventDefault(); 
+                    onClick={() => {
                       closeMenus();
-                      window.location.href = "/commercial";
+                      navigate("/commercial");
                     }}
                   >
                     Commercial
-                  </Link>
+                  </div>
                 </li>
                 <li>
-                  <Link
-                    to="/residential"
+                  <div
                     className="header__dropdown-link"
-                    onClick={(e) => {
-                      e.preventDefault(); 
+                    onClick={() => {
                       closeMenus();
-                      window.location.href = "/residential";
+                      navigate("/residential");
                     }}
                   >
                     Residential
-                  </Link>
+                  </div>
                 </li>
               </ul>
             )}
           </div>
 
-          <Link
-            to="/about"
+          <div
             className={`header__link ${isActive("/about") ? "active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault(); 
+            onClick={() => {
               closeMenus();
-              window.location.href = "/about";
+              navigate("/about");
             }}
           >
             About
-          </Link>
-          <Link
-            to="/contact"
+          </div>
+
+          <div
             className={`header__link ${isActive("/contact") ? "active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
               closeMenus();
-              window.location.href = "/contact";
+              navigate("/contact");
             }}
           >
             Contact
-          </Link>
+          </div>
         </nav>
       </div>
     </header>

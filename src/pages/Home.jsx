@@ -108,18 +108,22 @@ export default function Home() {
             </span>
           </h2>
         </div>
-        <div className="cards-container">
-          <Card
-            title="Commercial Interior"
-            imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (1).jpeg"
-            link="/commercial"
-          />
-          <Card
-            title="Residential Interior"
-            imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (2).jpeg"
-            link="/residential"
-          />
-        </div>
+        <Row className="cards-container p-2">
+          <Col xs={12} md={6} lg={6}>
+            <Card
+              title="Commercial Interior"
+              imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (1).jpeg"
+              link="/commercial"
+            />
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <Card
+              title="Residential Interior"
+              imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (2).jpeg"
+              link="/residential"
+            />
+          </Col>
+        </Row>
         <Row className="construction-row">
           <Col xs={12} md={8}>
             <div className="construction-image-container">

@@ -22,11 +22,11 @@ function ImageGalleryUtil({ data }) {
         isImageLeft ? "image-left" : "image-right"
       }`}
     >
-      <Col xs={12} md={7} className="banner-image">
+      <Col xs={12} md={7} lg={6} className="banner-image">
         <img src={imageSrc} alt={altText} />
       </Col>
 
-      <Col xs={12} md={5} className="text-overlay">
+      <Col xs={12} md={5} lg={6} className="text-overlay">
         <Card className="p-2 custom-card">
           <CardBody>
             {title && <h1>{title}</h1>}

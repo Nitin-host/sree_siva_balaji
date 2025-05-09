@@ -8,10 +8,13 @@ import Residential from "./pages/Residential";
 import Header from "./component/Header";
 import UniqueFooter from "./component/Footer";
 import ProjectDetails from "./component/ProjectDetails";
+import ScrollToTop from "./component/ScrollToTop";
+import ContactWidget from "./component/ContactWidget";
 
 function App() {
   return (
     <>
+      <ScrollToTop/>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,6 +24,7 @@ function App() {
         <Route path="/residential" element={<Residential />} />
         <Route path="/project-details/:title" element={<ProjectDetails />} />
       </Routes>
+      <ContactWidget/>
       <UniqueFooter />
     </>
   );

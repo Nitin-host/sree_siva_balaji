@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
-import * as AiIcons from "react-icons/ai"; // import all sets you may use
+import * as AiIcons from "react-icons/ai";
 import { Row, Col } from "reactstrap";
 import "../styles/ProjectDetails.scss";
-import ImageModal from "../utils/ImageModal"; // Adjust path if needed
+import ImageModal from "../utils/ImageModal";
 const iconLibraries = { ...FaIcons, ...MdIcons, ...AiIcons }; 
 
 export default function ProjectDetails() {

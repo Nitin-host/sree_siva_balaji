@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "../styles/ContactWidget.css";
 
 const Contact = ({ formKey }) => {
@@ -9,7 +9,7 @@ const Contact = ({ formKey }) => {
     name: "",
     email: "",
     phone: "",
-    serviceType: "",
+    service: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -21,7 +21,7 @@ const Contact = ({ formKey }) => {
       name: "",
       email: "",
       phone: "",
-      serviceType: "",
+      service: "",
     });
     setErrors({});
   }, [formKey]);
@@ -43,8 +43,8 @@ const Contact = ({ formKey }) => {
       newErrors.phone = "Phone must be at least 10 digits.";
     }
 
-    if (!formData.serviceType) {
-      newErrors.serviceType = "Please select a service type.";
+    if (!formData.service) {
+      newErrors.service = "Please select a service type.";
     }
 
     setErrors(newErrors);
@@ -67,10 +67,10 @@ const Contact = ({ formKey }) => {
     }
 
     try {
-      // await axios.post("/api/sendForm", formData); // Use full URL if frontend is separate
+      await axios.post("https://api-ssb.vercel.app/contact", formData); // Use full URL if frontend is separate
       toast.success("Message sent successfully!");
       console.log("Form data submitted:", formData);
-      setFormData({ name: "", email: "", phone: "", serviceType: "" });
+      setFormData({ name: "", email: "", phone: "", service: "" });
     } catch (err) {
       console.error("Submission error:", err);
       toast.error("Failed to send. Please try again.");
@@ -81,6 +81,7 @@ const Contact = ({ formKey }) => {
 
   return (
     <form className="contact-form mt-3" onSubmit={handleSubmit} noValidate>
+      <ToastContainer/>
       <div className="form-group">
         <label htmlFor="name">Full Name</label>
         <input
@@ -112,13 +113,13 @@ const Contact = ({ formKey }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="serviceType">Service Type</label>
+        <label htmlFor="service">Service Type</label>
         <select
-          id="serviceType"
-          name="serviceType"
-          value={formData.serviceType}
+          id="service"
+          name="service"
+          value={formData.service}
           onChange={handleChange}
-          className={errors.serviceType ? "error-input" : ""}
+          className={errors.service ? "error-input" : ""}
           required
         >
           <option value="">Select a service type</option>
@@ -126,7 +127,7 @@ const Contact = ({ formKey }) => {
           <option value="COMMERCIAL-INTERIORS">COMMERCIAL INTERIORS</option>
           <option value="ARCHITECTURE">ARCHITECTURE</option>
         </select>
-        {errors.serviceType && <p className="error">{errors.serviceType}</p>}
+        {errors.service && <p className="error">{errors.service}</p>}
       </div>
 
       <div className="form-group">

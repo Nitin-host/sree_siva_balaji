@@ -75,7 +75,9 @@
   .social-icons {
     display: flex;
     gap: 1rem;
-
+    a{
+      color: #000;
+    }
     .social-icon {
       font-size: 1.5rem;
       cursor: pointer;
@@ -117,7 +119,18 @@
     margin-bottom: 0.5rem;
 
     .contact-icon {
+      font-size: 20px;
       margin-right: 0.5rem;
+      color: #d4af37;
+    }
+  }
+
+  .location-item{
+    display: flex;
+    .location-icon{
+      margin-top: -10px;
+      font-size: 50px;
+      margin-right: 0.2rem;
       color: #d4af37;
     }
   }

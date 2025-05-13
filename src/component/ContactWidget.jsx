@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Contact from "./Contact";
+import { useState } from "react";
+import Contact from "./ContactForm";
 import { FiX } from "react-icons/fi";
 import "../styles/ContactWidget.css";
 

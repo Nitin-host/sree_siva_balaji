@@ -1,8 +1,7 @@
-import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import "../styles/Footer.scss";
+import {FaInstagram,FaWhatsapp,} from "react-icons/fa";
+import { MdEmail, MdLocationOn } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import "../styles/Footer.scss";
 
 const UniqueFooter = () => {
   const navigate = useNavigate();
@@ -19,10 +18,20 @@ const UniqueFooter = () => {
               premium quality.
             </p>
             <div className="social-icons">
-              <FaLinkedin className="social-icon" />
-              <FaGithub className="social-icon" />
-              <FaTwitter className="social-icon" />
-              <FaInstagram className="social-icon" />
+              <a
+                // href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <FaInstagram size={30} className="social-icon"/>
+              </a>
+              <a 
+              href="https://wa.me/9030613838"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <FaWhatsapp size={30} className="social-icon"/>
+              </a>
             </div>
           </div>
 
@@ -68,6 +77,10 @@ const UniqueFooter = () => {
             <div className="contact-item">
               <MdEmail className="contact-icon" />
               <span>contact@sreesivabalaji.com</span>
+            </div>
+            <div className="location-item">
+              <MdLocationOn className="location-icon" />
+              <span>{`Plot No 481, Flat No 103, Green Leaf Apartment, RajaRajeshwara Nagar, Hyderabad, Rangareddy, Telangana, 500084`}</span>
             </div>
           </div>
         </div>

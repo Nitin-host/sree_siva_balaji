@@ -29,7 +29,7 @@ function ImageGalleryUtil({ data }) {
       <Col xs={12} md={5} lg={6} className="text-overlay">
         <Card className="p-2 custom-card">
           <CardBody>
-            {title && <h1>{title}</h1>}
+            {title && <h1 className="image-title">{title}</h1>}
             {subtitle && <h2>{subtitle}</h2>}
             {description && <p>{description}</p>}
           </CardBody>

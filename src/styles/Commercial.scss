@@ -36,57 +36,6 @@ $gradient-colors: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
     }
   }
 
-  .image-container {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
-
-    img {
-        object-fit: cover;
-        height: calc(100vh - 0.3rem) !important;
-        width: 100%;
-    }
-
-    .text-overlay {
-      position: absolute;
-      top: 90%;
-      left: 100%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-
-      h1 {
-        font-size: 5rem;
-        background: linear-gradient(to left, #0dff82, #09ff22);
-        -webkit-text-fill-color: transparent;
-        
-        -webkit-background-clip: text;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-        opacity: 1;
-        animation: slideToCenter 2s ease-out forwards;
-        white-space: nowrap;
-        text-align: center;
-      }
-    }
-  }
-
-  @keyframes slideToCenter {
-    0% {
-      opacity: 0;
-      transform: translate(-150%, -50%);
-    }
-    60% {
-      opacity: 1;
-      transform: translate(-55%, -50%);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-  }
-
   @media (max-width: 768px) {
     .commercial-content {
       padding: 2rem;

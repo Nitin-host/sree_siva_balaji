@@ -1,5 +1,5 @@
 import React from "react";
-import ImageGalleryUtil from "./ImageGalleryUtil";
+import ImageGalleryUtil from "./ProjectCard";
 import styles from "../styles/ImageGallery.module.scss";
 
 export default function ImageGallery({ data, navigate }) {
@@ -15,6 +15,7 @@ export default function ImageGallery({ data, navigate }) {
             {category && (
               <h2 className={styles["section-title"]}>{category}</h2>
             )}
+            <div className="project-section">
             {projects.map((project, index) => (
               <ImageGalleryUtil
                 key={index}
@@ -42,6 +43,7 @@ export default function ImageGallery({ data, navigate }) {
                 }}
               />
             ))}
+            </div>
           </div>
         ) : null
       )}

@@ -32,6 +32,30 @@ export default function Home() {
           text: "This is the third slide",
         },
       },
+      {
+        src: "/images/1-PROJECT/1st-main-image.jpeg",
+        altText: "Project-1",
+        caption: {
+          title: "Project 1",
+          text: "Project 1 description",
+        },
+      },
+      {
+        src: "/images/3RD -PROJECT/3rd-main-image.jpeg",
+        altText: "Slide 3",
+        caption: {
+          title: "Third Slide",
+          text: "This is the third slide",
+        },
+      },
+      {
+        src: "/images/4TH-PROJECT/4th-main-image.jpeg",
+        altText: "Prpject-4",
+        caption: {
+          title: "Project 4",
+          text: "This is Project 4",
+        },
+      },
     ];
     return (
       <div className="home-container">

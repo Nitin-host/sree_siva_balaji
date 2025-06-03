@@ -32,8 +32,6 @@ export default function ProjectDetails() {
     setModalOpen(true);
   };
 
-  console.log("Project Details:", projectDetails);
-
   return (
     <div className="project-details-container">
       {/* Top Banner Image */}

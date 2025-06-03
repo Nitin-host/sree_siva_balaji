@@ -30,7 +30,7 @@ const CustomCarousel = ({ items }) => {
               />
               {item.caption && (
                 <div className="carousel-caption d-md-block">
-                  <h5>{item.caption.title}</h5>
+                  <h1 className="three-d-text">{item.caption.title}</h1>
                   <p>{item.caption.text}</p>
                 </div>
               )}

@@ -1,9 +1,18 @@
 import React from "react";
 import TeamMemberCard from "../utils/TeamCard";
 import { Row, Col } from "reactstrap";
+import Aos from "aos";
 import '../styles/About.scss'
 
 export default function About() {
+  React.useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false, // animate every time it enters the viewport
+      mirror: true,
+    });
+  }
+  , []);
     const teamMembers = [
       {
         id: 1,
@@ -56,7 +65,7 @@ export default function About() {
         <h2 className="text-center mb-4">Meet Our Team</h2>
         <Row>
           {teamMembers.map((member) => (
-            <Col md="4" sm="6" xs="12" className="mb-5" key={member.id}>
+            <Col data-aos="zoom-in" md="4" sm="6" xs="12" className="mb-5" key={member.id}>
               <TeamMemberCard member={member} />
             </Col>
           ))}

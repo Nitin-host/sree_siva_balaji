@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import * as AiIcons from "react-icons/ai";
 import { Row, Col } from "reactstrap";
 import ImageModal from "../utils/ImageModal";
+import Aos from "aos";
 import "../styles/ProjectDetails.scss";
 const iconLibraries = { ...FaIcons, ...MdIcons, ...AiIcons }; 
 
@@ -13,6 +14,14 @@ export default function ProjectDetails() {
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
 
   if (!state || !state.gallery || state.gallery.length === 0) {
     return (
@@ -48,7 +57,7 @@ export default function ProjectDetails() {
       {/* <div className="details">{description && <p>{description}</p>}</div> */}
       {projectDetails && (
         <Row className="p-4">
-          <Col xs={12} md="6">
+          <Col data-aos="fade-up-right" xs={12} md="6">
             <h3>{projectDetails.type}</h3>
             <h2 className="text-warning display-6 fw-bold">
               {projectDetails.areaRange}
@@ -136,7 +145,7 @@ export default function ProjectDetails() {
               </tbody>
             </table>
           </Col>
-          <Col xs={12} md="6">
+          <Col data-aos="fade-up-left" xs={12} md="6">
             <img
               src={projectDetails.image}
               alt={title}
@@ -152,7 +161,7 @@ export default function ProjectDetails() {
         <h2>Gallery</h2>
         <Row>
           {gallery.map((img, idx) => (
-            <Col key={idx} xs="12" sm="6" md="4" lg="3" className="mb-4">
+            <Col data-aos="zoom-in" key={idx} xs="12" sm="6" md="4" lg="3" className="mb-4">
               <div className="gallery-image-container">
                 <img
                   src={img}

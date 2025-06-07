@@ -1,6 +1,7 @@
 body{
     // font-family: 'open-sans', sans-serif;
-    font-family: 'Vidaloka' !important;
+    // font-family: 'Vidaloka' !important;    
+    font-family: "Dosis", Arial, Helvetica, sans-serif !important;
     background-color: #f0f0f0;
     color: #333;
 }
@@ -15,7 +16,6 @@ body.modal-open {
 }
 
 
-// Reset Bootstrap navbar styles
 .navbar:not(.bootstrap-scope .navbar) {
   position: initial;
   padding: initial;

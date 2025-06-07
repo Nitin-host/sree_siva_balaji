@@ -53,7 +53,9 @@ const BackgroundImageHolder = ({
   }, [parallaxSpeed]);
 
   return (
-    <div className={`background-image-holder-wrapper ${className}`}>
+    <div
+      className={`background-image-holder-wrapper ${className}`}
+    >
       <div
         ref={holderRef}
         className="background-image-holder parallax lazyloaded"

@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AutoCarousel from '../utils/AutoCarousel ';
 import BackgroundImageHolder from '../utils/BackgroundImageHolder ';
 import {Row, Col} from 'reactstrap';
 import CountUp from 'react-countup-animate';
 import Card from '../utils/Card'
+import WeDoTyping from '../component/WeDoTyping';
 import "../styles/Home.scss";
+import Aos from 'aos';
 
 export default function Home() {
+  useEffect(()=> {
+    Aos.init({
+      duration: 500,
+      once: false,
+      mirror: true,
+    });
+  }, []);
     const carouselItems = [
       {
         src: "/images/TECH MAHINDRA-CHENNAI/TC (1).jpeg",
@@ -68,7 +77,7 @@ export default function Home() {
           contentPosition="center"
         >
           <Row>
-            <Col xs="12" md="6">
+            <Col data-aos="fade-up-right" xs="12" md="6">
               <div className="headline-wrapper text-start">
                 <h3 className="bt_bb_headline_tag">
                   <span className="bt_bb_headline_superheadline">
@@ -85,7 +94,7 @@ export default function Home() {
               </p>
               {/* <button className="cta-button">Learn More</button> */}
             </Col>
-            <Col xs="12" md="6" className="image-container">
+            <Col data-aos="fade-up-left" xs="12" md="6" className="image-container">
               <div className="content-image">
                 <img
                   src="/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg"
@@ -94,7 +103,7 @@ export default function Home() {
               </div>
             </Col>
           </Row>
-          <Row className="g-4">
+          <Row data-aos="fade-up" className="g-4">
             <Col xs={12} md={4} className="text-center">
               <CountUp
                 number={40}
@@ -127,20 +136,18 @@ export default function Home() {
             <span className="bt_bb_headline_superheadline">
               CHOOSE YOUR TYPE
             </span>
-            <span className="bt_bb_headline_content">
-              <span>Sophisticated and Spacious</span>
-            </span>
+            <WeDoTyping />
           </h2>
         </div>
         <Row className="cards-container p-2">
-          <Col xs={12} md={6} lg={6}>
+          <Col data-aos="fade-up-right" xs={12} md={6} lg={6}>
             <Card
               title="Commercial Interior"
               imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (1).jpeg"
               link="/commercial"
             />
           </Col>
-          <Col xs={12} md={6} lg={6}>
+          <Col data-aos="fade-up-left" xs={12} md={6} lg={6}>
             <Card
               title="Residential Interior"
               imageUrl="/images/TECH MAHINDRA-CHENNAI/TC (2).jpeg"
@@ -149,7 +156,7 @@ export default function Home() {
           </Col>
         </Row>
         <Row className="construction-row">
-          <Col xs={12} md={8}>
+          <Col data-aos="fade-up-right" xs={12} md={8}>
             <div className="construction-image-container">
               <img
                 src="/images/commercial.jpg"
@@ -158,7 +165,7 @@ export default function Home() {
               />
             </div>
           </Col>
-          <Col xs={12} md={4} className="constructions-wrapper">
+          <Col data-aos="fade-up-left" xs={12} md={4} className="constructions-wrapper">
             <h2 className="bt_bb_headline_tag">
               <span className="bt_bb_headline_superheadline">
                 SETTING HIGH STANDARDS
@@ -177,7 +184,7 @@ export default function Home() {
         </Row>
         <div className="golden-line mx-2"></div>
         <Row className="construction-row">
-          <Col xs={12} md={4} className="constructions-wrapper">
+          <Col data-aos="fade-up-right" xs={12} md={4} className="constructions-wrapper">
             <h2 className="bt_bb_headline_tag">
               <span className="bt_bb_headline_superheadline">
                 WITNESS A PARADISE
@@ -191,7 +198,7 @@ export default function Home() {
               and bring a sense of luxury to your dream home!
             </p>
           </Col>
-          <Col xs={12} md={8}>
+          <Col data-aos="fade-up-left" xs={12} md={8}>
             <div className="construction-image-container">
               <img
                 src="/images/residential.jpg"

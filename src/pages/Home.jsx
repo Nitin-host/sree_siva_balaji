@@ -7,6 +7,8 @@ import Card from '../utils/Card'
 import WeDoTyping from '../component/WeDoTyping';
 import "../styles/Home.scss";
 import Aos from 'aos';
+import ProcessSteps from '../component/ProcessSteps ';
+import ClientLogosCarousel from '../component/ClientLogosCarousel';
 
 export default function Home() {
   useEffect(()=> {
@@ -14,6 +16,7 @@ export default function Home() {
       duration: 500,
       once: false,
       mirror: true,
+      easing: "ease-in-out",
     });
   }, []);
     const carouselItems = [
@@ -66,6 +69,29 @@ export default function Home() {
         },
       },
     ];
+    const services = [
+      {
+        title: "Turnkey Projects",
+        description:"We specialize in ready-to-move projects that are highly cost-effective. Our team of experienced professionals work tirelessly for you to provide a better future.",
+      },
+      {
+        title: "DESIGN",
+        description:
+          "Our unique methods are integrated with advanced technology to create a sophisticated and classy place to live.",
+      },
+      {
+        title: "CIVIL",
+        description:
+          "We follow confident practices with a transparent approach. We have a competent construction process which enables higher growth.",
+      },
+      {
+        title: "INTERIOR",
+        description:
+          "Our designs target the customers' needs and want with better quality and a scenic area.",
+      },
+      // You can easily add more items here
+    ];
+    
     return (
       <div className="home-container">
         <AutoCarousel items={carouselItems} />
@@ -94,7 +120,12 @@ export default function Home() {
               </p>
               {/* <button className="cta-button">Learn More</button> */}
             </Col>
-            <Col data-aos="fade-up-left" xs="12" md="6" className="image-container">
+            <Col
+              data-aos="fade-up-left"
+              xs="12"
+              md="6"
+              className="image-container"
+            >
               <div className="content-image">
                 <img
                   src="/images/TECH MAHINDRA-CHENNAI/TC (7).jpeg"
@@ -131,15 +162,39 @@ export default function Home() {
             </Col>
           </Row>
         </BackgroundImageHolder>
-        <div className="headline-wrapper">
-          <h2 className="bt_bb_headline_tag">
-            <span className="bt_bb_headline_superheadline">
+        <Row>
+          <Col xs={12} md={3} className="text-center">
+            <img
+              src="/images/We-Do-Main-Image.jpg"
+              alt="We Do Main"
+              className="we-do-main-image"
+              loading="lazy"
+            />
+          </Col>
+          <Col xs={12} md={9} className="headline-wrapper">
+            <h2 className="text-start bt_bb_headline_tag">
+              {/* <span className="bt_bb_headline_superheadline">
               CHOOSE YOUR TYPE
-            </span>
-            <WeDoTyping />
-          </h2>
-        </div>
-        <Row className="cards-container p-2">
+            </span> */}
+              <WeDoTyping />
+            </h2>
+            <Row xs={1} md={2} className="text-start g-4">
+              {services.map((service, index) => (
+                <Col
+                  key={index}
+                  className="service-item p-3"
+                  data-aos='fade-left'
+                  data-aos-delay={index * 100}
+                >
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+        <ProcessSteps/>
+        {/* <Row className="cards-container p-2">
           <Col data-aos="fade-up-right" xs={12} md={6} lg={6}>
             <Card
               title="Commercial Interior"
@@ -154,7 +209,7 @@ export default function Home() {
               link="/residential"
             />
           </Col>
-        </Row>
+        </Row> */}
         <Row className="construction-row">
           <Col data-aos="fade-up-right" xs={12} md={8}>
             <div className="construction-image-container">
@@ -165,7 +220,12 @@ export default function Home() {
               />
             </div>
           </Col>
-          <Col data-aos="fade-up-left" xs={12} md={4} className="constructions-wrapper">
+          <Col
+            data-aos="fade-up-left"
+            xs={12}
+            md={4}
+            className="constructions-wrapper"
+          >
             <h2 className="bt_bb_headline_tag">
               <span className="bt_bb_headline_superheadline">
                 SETTING HIGH STANDARDS
@@ -184,7 +244,12 @@ export default function Home() {
         </Row>
         <div className="golden-line mx-2"></div>
         <Row className="construction-row">
-          <Col data-aos="fade-up-right" xs={12} md={4} className="constructions-wrapper">
+          <Col
+            data-aos="fade-up-right"
+            xs={12}
+            md={4}
+            className="constructions-wrapper"
+          >
             <h2 className="bt_bb_headline_tag">
               <span className="bt_bb_headline_superheadline">
                 WITNESS A PARADISE
@@ -225,6 +290,7 @@ export default function Home() {
             </h3>
           </div>
         </BackgroundImageHolder>
+        <ClientLogosCarousel/>
         <div className="contact-container">
           <Row>
             <Col xs={8} md={7}>

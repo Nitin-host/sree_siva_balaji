@@ -20,6 +20,7 @@ export default function ProjectDetails() {
       duration: 1000,
       once: false,
       mirror: true,
+      easing: "ease-in-out",
     });
   }, []);
 

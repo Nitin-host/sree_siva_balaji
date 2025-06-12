@@ -10,9 +10,11 @@ export default function About() {
       duration: 1000,
       once: false, // animate every time it enters the viewport
       mirror: true,
+      easing: "ease-in-out",
     });
   }
   , []);
+  
     const teamMembers = [
       {
         id: 1,

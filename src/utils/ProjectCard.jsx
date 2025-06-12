@@ -8,6 +8,7 @@ const ProjectCard = ({ data }) => {
       duration: 1000,
       once: false, // animate every time it enters the viewport
       mirror: true,
+      easing: "ease-in-out",
     });
   }, []);
 

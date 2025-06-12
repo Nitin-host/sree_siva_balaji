@@ -1,0 +1,77 @@
+.client-carousel-wrapper {
+    background: linear-gradient(to right, #0f1010 70%, #2b945e 100%);
+    padding: 50px 10px;
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .client-carousel-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 16, 16, 0.3); /* Semi-transparent dark overlay */
+    z-index: 0;
+  }
+  
+  .client-carousel-wrapper h3 {
+    color: #28a745;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .logo-slide {
+    display: flex !important; /* Required for react-slick flex layout */
+    justify-content: center;
+    align-items: center;
+    padding: 5px; /* ⬅️ Minimal padding */
+    margin: 0;
+  }
+  
+  .logo-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: inset 0 0 4px rgba(40, 167, 69, 0.2),
+                0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 90px;
+  }
+  
+  .logo-box:hover {
+    background: rgba(255, 215, 0, 0.08);
+    transform: scale(1.04);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  
+  .client-logo {
+    width: 60px;
+    max-height: 45px;
+    object-fit: contain;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .client-logo {
+      width: 50px;
+      max-height: 40px;
+    }
+  
+    .logo-box {
+      height: 80px;
+      width: 80px;
+      padding: 10px;
+    }
+  }
+  

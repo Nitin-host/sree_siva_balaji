@@ -6,20 +6,26 @@
         margin-left: 1px;
         margin-top: 2rem;
         border-radius: 5px;
-        height: calc(100vh - 100px);
+        // height: calc(100vh - 100px);
     }
+    .we-do-section {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+      }
+      
     .service-item {
         padding: 1rem;
 
         h3 {
-          font-size: 1.3rem;
-          color: #222;
+        //   font-size: 1.3rem;
+          color: #ddd;
           margin-bottom: 0.8rem;
         }
          p {
           font-size: 0.95rem;
           line-height: 1.5;
-          color: #555;
+          color: #ddd;
         }
       }
       

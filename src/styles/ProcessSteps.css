@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed; /* Better for mobile */
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 100px 0;
   color: white;
 }
@@ -47,7 +47,7 @@
     position: absolute;
     height: 80px;
     width: 2px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .3);
     bottom: -87px;
     left: 50%;
     transform: translateX(-50%);
@@ -78,7 +78,7 @@
     width: 90%;
     /* max-width: 200px; */
     height: 2px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .3);
     margin-bottom: 20px;
     animation: growHorizontal 0.4s ease;
   }

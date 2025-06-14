@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -67,7 +66,7 @@ const ClientLogosCarousel = () => {
 
   return (
     <div className="client-carousel-wrapper">
-      <h3 className="text-center mb-4 text-white">Our Clients</h3>
+      <h3 className="text-center mb-4">Our Clients</h3>
       <Slider {...settings}>
         {logos.map((logo, index) => (
           <div key={index} className="logo-slide">

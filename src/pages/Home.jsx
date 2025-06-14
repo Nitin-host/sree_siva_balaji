@@ -162,38 +162,39 @@ export default function Home() {
             </Col>
           </Row>
         </BackgroundImageHolder>
-        <Row>
-          <Col xs={12} md={3} className="text-center">
-            <img
-              src="/images/We-Do-Main-Image.jpg"
-              alt="We Do Main"
-              className="we-do-main-image"
-              loading="lazy"
-            />
-          </Col>
-          <Col xs={12} md={9} className="headline-wrapper">
-            <h2 className="text-start bt_bb_headline_tag">
-              {/* <span className="bt_bb_headline_superheadline">
-              CHOOSE YOUR TYPE
-            </span> */}
-              <WeDoTyping />
-            </h2>
-            <Row xs={1} md={2} className="text-start g-4">
-              {services.map((service, index) => (
-                <Col
-                  key={index}
-                  className="service-item p-3"
-                  data-aos='fade-left'
-                  data-aos-delay={index * 100}
-                >
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </Col>
-              ))}
+        <div className="we-do-section py-5">
+          <div className="container">
+            <Row className="mx-auto">
+              <Col xs={12} md={4} className="text-center mb-3 mb-md-0">
+                <img
+                  src="/images/We-Do-Main-Image.jpg"
+                  alt="We Do Main"
+                  className="img-fluid we-do-main-image"
+                  loading="lazy"
+                />
+              </Col>
+              <Col xs={12} md={8} className="headline-wrapper">
+                <h2 className="text-start bt_bb_headline_tag">
+                  <WeDoTyping />
+                </h2>
+                <Row xs={1} md={2} className="g-4 mt-2">
+                  {services.map((service, index) => (
+                    <Col
+                      key={index}
+                      className="service-item p-3"
+                      data-aos="fade-left"
+                      data-aos-delay={index * 100}
+                    >
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
             </Row>
-          </Col>
-        </Row>
-        <ProcessSteps/>
+          </div>
+        </div>
+        <ProcessSteps />
         {/* <Row className="cards-container p-2">
           <Col data-aos="fade-up-right" xs={12} md={6} lg={6}>
             <Card
@@ -290,7 +291,7 @@ export default function Home() {
             </h3>
           </div>
         </BackgroundImageHolder>
-        <ClientLogosCarousel/>
+        <ClientLogosCarousel />
         <div className="contact-container">
           <Row>
             <Col xs={8} md={7}>

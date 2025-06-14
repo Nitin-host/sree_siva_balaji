@@ -3,6 +3,7 @@ import AOS from "aos";
 import { Row, Col } from "reactstrap";
 import "aos/dist/aos.css";
 import "../styles/ProcessSteps.css";
+import BackgroundImageHolder from "../utils/BackgroundImageHolder ";
 
 export default class ProcessSteps extends Component {
   constructor(props) {
@@ -49,13 +50,23 @@ export default class ProcessSteps extends Component {
 
     return (
       <div className="process-sectioncontainer text-center">
+       {/* <BackgroundImageHolder  imageUrl="/images/processImage.jpg"
+        parallaxSpeed={0.7}
+         overlayColor="rgba(0,0,0,0.5)"
+         contentPosition="center" ></BackgroundImageHolder> */}
         <h2>OUR PROCESS</h2>
         <Row
           data-aos="fade-up"
           className="justify-content-center mt-4 position-relative"
         >
           {this.steps.map((step, index) => (
-            <Col key={index} xs="6" sm="6" md="3"className="d-flex justify-content-center mb-4">
+            <Col
+              key={index}
+              xs="6"
+              sm="6"
+              md="3"
+              className="d-flex justify-content-center mb-4"
+            >
               <div
                 className={`step-circle ${
                   activeStep === index ? "active" : ""
@@ -78,6 +89,7 @@ export default class ProcessSteps extends Component {
           </div>
         )}
       </div>
+      // </BackgroundImageHolder>
     );
   }
 }

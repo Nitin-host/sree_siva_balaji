@@ -291,7 +291,9 @@ export default function Home() {
             </h3>
           </div>
         </BackgroundImageHolder>
+        <div className="golden-line"></div>
         <ClientLogosCarousel />
+        <div className="golden-line"></div>
         <div className="contact-container">
           <Row>
             <Col xs={8} md={7}>

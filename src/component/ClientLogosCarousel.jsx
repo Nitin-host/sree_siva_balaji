@@ -6,37 +6,41 @@ import "../styles/ClientLogosCarousel.css";
 const ClientLogosCarousel = () => {
     const logos = [
       {
-        name: "Microsoft",
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+        name: "K Raheja Corp",
+        url: "/images/Client/a-raheja.png",
       },
       {
-        name: "Netflix",
-        url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+        name: "General Electric",
+        url: "/images/Client/General_Electric.svg",
       },
       {
-        name: "Apple",
-        url: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+        name: "GSK",
+        url: "/images/Client/gsk.svg",
       },
       {
         name: "Google",
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+        url: "/images/Client/google.svg",
       },
       {
-        name: "LinkedIn",
-        url: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+        name: "next-rack",
+        url: "/images/Client/next-rack.svg",
       },
       {
-        name: "Facebook",
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+        name: "Oakridge International School",
+        url: "/images/Client/Oakridge.png",
       },
       {
-        name: "Instagram",
-        url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Instagram.svg",
+        name: "PhonePe",
+        url: "/images/Client/PhonePe.svg",
       },
       {
-        name: "PayPal",
-        url: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
+        name: "TechMahindra",
+        url: "/images/Client/TM.svg",
       },
+      {
+        name: "Verizon",
+        url: "/images/Client/Verizon.svg",
+      }
     ];
       
 

@@ -54,15 +54,21 @@ const ClientLogosCarousel = () => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
         },
       },
     ],

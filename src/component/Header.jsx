@@ -40,7 +40,7 @@ export default function Header() {
     <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
       <div className="header__container">
         <Link to="/" className="header__logo" onClick={() => navigate("/")}>
-          YourLogo
+          <img src='/images/SSBE-LOGO.png' alt="SSB Logo" className="header__logo-img" width={50} height={50} />
         </Link>
 
         <button

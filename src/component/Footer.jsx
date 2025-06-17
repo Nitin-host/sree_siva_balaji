@@ -12,7 +12,7 @@ const UniqueFooter = () => {
         <div className="footer-grid">
           {/* Company info */}
           <div className="footer-section">
-            <h3 className="footer-heading">Sree Siva Balaji</h3>
+            <h3 className="footer-heading">Sree Siva Balaji Enterprises</h3>
             <p className="footer-text">
               Combining luxury and sustainability through innovative design and
               premium quality.
@@ -23,14 +23,14 @@ const UniqueFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <FaInstagram size={30} className="social-icon"/>
+                <FaInstagram size={30} className="social-icon" />
               </a>
-              <a 
-              href="https://wa.me/9030613838"
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="https://wa.me/9030613838"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-              <FaWhatsapp size={30} className="social-icon"/>
+                <FaWhatsapp size={30} className="social-icon" />
               </a>
             </div>
           </div>

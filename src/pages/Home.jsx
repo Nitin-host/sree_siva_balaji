@@ -9,6 +9,7 @@ import "../styles/Home.scss";
 import Aos from 'aos';
 import ProcessSteps from '../component/ProcessSteps ';
 import ClientLogosCarousel from '../component/ClientLogosCarousel';
+import TurnoverBarChart from "../component/TurnoverChart";
 
 export default function Home() {
   useEffect(()=> {
@@ -274,23 +275,10 @@ export default function Home() {
             </div>
           </Col>
         </Row>
-        <BackgroundImageHolder
-          imageUrl="/images/section-background.webp"
-          parallaxSpeed={0.7}
-          overlayColor="rgba(0,0,0,0.3)"
-          contentPosition="center"
-        >
-          <div className="headline-wrapper text-start">
-            <h3 className="bt_bb_headline_tag">
-              <span className="bt_bb_headline_superheadline">
-                OUR FRAMEWORK
-              </span>
-              <span className="bt_bb_headline_content">
-                <span>Driving Values Through Sustainability</span>
-              </span>
-            </h3>
-          </div>
-        </BackgroundImageHolder>
+        <div data-aos="zoom-in-right" className="chart-container">
+          <h2>Company Performance</h2>
+          <TurnoverBarChart />
+        </div>
         <div className="golden-line"></div>
         <ClientLogosCarousel />
         <div className="golden-line"></div>
